@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CoinConvert.ViewModels;
 using Xamarin.Forms;
 
 namespace CoinConvert
@@ -12,6 +13,7 @@ namespace CoinConvert
     {
         public MainPage()
         {
+            BindingContext = new MainViewModel();
             InitializeComponent();
         }
     }

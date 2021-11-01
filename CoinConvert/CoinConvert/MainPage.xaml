@@ -2,6 +2,8 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CoinConvert.ViewModels;assembly=CoinConvert"
+             x:DataType="local:MainViewModel"
              x:Class="CoinConvert.MainPage"
              BackgroundColor="#70B77E">
 
@@ -9,13 +11,16 @@
            BorderColor="#129490" Margin="5">
         <FlexLayout Direction="Column" JustifyContent="SpaceBetween">
             <FlexLayout Direction="Row" FlexLayout.Basis="20%" JustifyContent="SpaceBetween">
-                <DatePicker FlexLayout.Basis="45%" />
-                <Label VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="15" FlexLayout.Basis="45%" HorizontalTextAlignment="End">Date: 13/11/2021</Label>
+                <DatePicker FlexLayout.Basis="45%" Date="{Binding SelectedDate, Mode=TwoWay}"/>
+                <Label VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="15" FlexLayout.Basis="45%"
+                       HorizontalTextAlignment="End" Text="{Binding }">
+                </Label>
             </FlexLayout>
             <FlexLayout Direction="Row" JustifyContent="SpaceBetween" FlexLayout.Basis="30%">
-                <Picker FlexLayout.Basis="45%"></Picker>
+                <Picker FlexLayout.Basis="45%" ItemsSource="{Binding CurrencyList}" ItemDisplayBinding="{Binding CharCode}" FontSize="14"
+                        SelectedItem="{Binding FirstCoin, Mode=TwoWay}" />
                 <Frame FlexLayout.Basis="45%" BorderColor="#129490" BackgroundColor="Azure" Padding="5">
-                    <Entry HorizontalTextAlignment="Center"></Entry>
+                    <Entry HorizontalTextAlignment="Center" />
                 </Frame>
             </FlexLayout>
             <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="15" FontAttributes="Bold"
@@ -23,9 +28,10 @@
                 is
             </Label>
             <FlexLayout Direction="Row" JustifyContent="SpaceBetween" FlexLayout.Basis="30%">
-                <Picker FlexLayout.Basis="45%"></Picker>
+                <Picker FlexLayout.Basis="45%" ItemsSource="{Binding CurrencyList}" ItemDisplayBinding="{Binding CharCode}"
+                        SelectedItem="{Binding SecondCoin, Mode=TwoWay}" />
                 <Frame FlexLayout.Basis="45%" BorderColor="#129490" BackgroundColor="Azure" Padding="5">
-                    <Entry HorizontalTextAlignment="Center"></Entry>
+                    <Entry HorizontalTextAlignment="Center" />
                 </Frame>
             </FlexLayout>
         </FlexLayout>
