@@ -11,16 +11,14 @@
            BorderColor="#129490" Margin="5">
         <FlexLayout Direction="Column" JustifyContent="SpaceBetween">
             <FlexLayout Direction="Row" FlexLayout.Basis="20%" JustifyContent="SpaceBetween">
-                <DatePicker FlexLayout.Basis="45%" Date="{Binding SelectedDate, Mode=TwoWay}"/>
-                <Label VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="15" FlexLayout.Basis="45%"
-                       HorizontalTextAlignment="End" Text="{Binding }">
-                </Label>
+                <DatePicker FlexLayout.Basis="45%" Date="{Binding SelectedDate, Mode=TwoWay}" />
             </FlexLayout>
             <FlexLayout Direction="Row" JustifyContent="SpaceBetween" FlexLayout.Basis="30%">
-                <Picker FlexLayout.Basis="45%" ItemsSource="{Binding CurrencyList}" ItemDisplayBinding="{Binding CharCode}" FontSize="14"
+                <Picker FlexLayout.Basis="45%" ItemsSource="{Binding CurrencyList}"
+                        ItemDisplayBinding="{Binding CharCode}" FontSize="14"
                         SelectedItem="{Binding FirstCoin, Mode=TwoWay}" />
                 <Frame FlexLayout.Basis="45%" BorderColor="#129490" BackgroundColor="Azure" Padding="5">
-                    <Entry HorizontalTextAlignment="Center" />
+                    <Entry HorizontalTextAlignment="Center" Text="{Binding FromValue, Mode=TwoWay}" />
                 </Frame>
             </FlexLayout>
             <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="15" FontAttributes="Bold"
@@ -28,10 +26,11 @@
                 is
             </Label>
             <FlexLayout Direction="Row" JustifyContent="SpaceBetween" FlexLayout.Basis="30%">
-                <Picker FlexLayout.Basis="45%" ItemsSource="{Binding CurrencyList}" ItemDisplayBinding="{Binding CharCode}"
+                <Picker FlexLayout.Basis="45%" ItemsSource="{Binding CurrencyList}"
+                        ItemDisplayBinding="{Binding CharCode}"
                         SelectedItem="{Binding SecondCoin, Mode=TwoWay}" />
                 <Frame FlexLayout.Basis="45%" BorderColor="#129490" BackgroundColor="Azure" Padding="5">
-                    <Entry HorizontalTextAlignment="Center" />
+                    <Entry HorizontalTextAlignment="Center" Text="{Binding ToValue, Mode=TwoWay}" />
                 </Frame>
             </FlexLayout>
         </FlexLayout>

@@ -1,4 +1,5 @@
 ﻿using System;
+using CoinConvert.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,6 +20,7 @@ namespace CoinConvert
 
         protected override void OnSleep()
         {
+            ((MainViewModel) MainPage.BindingContext).SaveAllData();
         }
 
         protected override void OnResume()
